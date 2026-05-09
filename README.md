@@ -1,4 +1,4 @@
-# BankSim\_ByteForce
+# ByteBank
 
 Esse aplicativo, baseado em Python, é um simulador de um sistema de um banco (com seu DB incluso) e sua segurança
 
