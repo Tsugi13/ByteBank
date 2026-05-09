@@ -10,7 +10,7 @@ Os objetivos do aplicativo são:
 * Sistema de saque e depósito ✅
 * Um site hospedado (pode até ser por LAN) ✅
 * Utilização em máquinas diferentes ✅
-* Código completamente comentado ⌛
+* Código completamente comentado ✅
 * Modularização de código entre arquivos ✅
 
 Instruções:
