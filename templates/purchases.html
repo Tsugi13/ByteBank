@@ -21,9 +21,10 @@
       background:#000; position:sticky; top:0; z-index:100;
     }
     nav::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,var(--cyan) 0%,transparent 40%); opacity:0.3; }
-    .nav-logo { display:flex; align-items:center; gap:12px; }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; transition:opacity 0.2s; }
+    .nav-logo:hover { opacity:0.8; }
     .nav-logo svg { width:34px; height:34px; }
-    .nav-logo-name { font-family:'Rajdhani',sans-serif; font-size:20px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
+    .nav-logo-name { font-family:'Rajdhani',sans-serif; font-size:20px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#ffffff; }
     .nav-logo-name em { color:var(--cyan); font-style:normal; }
     .nav-right { display:flex; align-items:center; gap:16px; }
     .nav-link { font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:0.13em; text-transform:uppercase; color:var(--muted); text-decoration:none; border:1px solid var(--border); padding:6px 14px; transition:color 0.2s,border-color 0.2s; }
@@ -107,7 +108,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">
+  <a href="/home" class="nav-logo">
     <svg viewBox="0 0 50 50" fill="none">
       <defs><filter id="g"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="g2"><feGaussianBlur stdDeviation="3"/></filter></defs>
       <rect x="1" y="1" width="48" height="48" rx="7" fill="#020c18" stroke="#00d4ff" stroke-width="1"/>
@@ -119,9 +120,9 @@
       <text x="25" y="32" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="19" font-weight="700" fill="#00d4ff" filter="url(#g)">BB</text>
     </svg>
     <div class="nav-logo-name"><em>Byte</em>Bank</div>
-  </div>
+  </a>
   <div class="nav-right">
-    <a href="/dashboard" class="nav-link">Dashboard</a>
+    <a href="/home" class="nav-link">Home</a>
     <a href="/purchases" class="nav-link active">Compras</a>
     <a href="/checkout"  class="nav-link">Checkout</a>
     <a href="/logout"    class="nav-link">[ sair ]</a>

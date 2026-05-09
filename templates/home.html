@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ByteBank — Dashboard</title>
+  <title>ByteBank — Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@200;300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -40,9 +40,10 @@
       background: linear-gradient(90deg, var(--cyan) 0%, transparent 40%);
       opacity: 0.3;
     }
-    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: opacity 0.2s; }
+    .nav-logo:hover { opacity: 0.8; }
     .nav-logo svg { width: 34px; height: 34px; }
-    .nav-logo-name { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-logo-name { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #ffffff; }
     .nav-logo-name em { color: var(--cyan); font-style: normal; }
     .nav-right { display: flex; align-items: center; gap: 16px; }
     .nav-id { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.12em; }
@@ -116,7 +117,7 @@
     .action-card .top-line { position: absolute; top: 0; left: 0; right: 0; height: 1px; }
     .action-card.withdraw .top-line { background: linear-gradient(90deg, var(--withdraw), transparent); }
     .action-card.deposit  .top-line { background: linear-gradient(90deg, var(--deposit),  transparent); }
-    .action-card.checkout .top-line { background: linear-gradient(90deg, #a78bfa, transparent); }
+    .action-card.checkout .top-line { background: linear-gradient(90deg, #a78bfa , transparent); }
 
     .action-icon { width: 36px; height: 36px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
     .action-card.checkout .action-icon { border-color: rgba(167,139,250,0.3); }
@@ -124,7 +125,7 @@
     .action-title { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
     .action-card.withdraw .action-title { color: #e0885a; }
     .action-card.deposit  .action-title { color: var(--cyan); }
-    .action-card.checkout .action-title { color: #a78bfa; }
+    .action-card.checkout .action-title { color: #a78bfa ; }
 
     .action-sub { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 22px; letter-spacing: 0.06em; }
 
@@ -188,7 +189,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">
+  <a href="/home" class="nav-logo">
     <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="g"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -203,7 +204,7 @@
       <text x="25" y="32" text-anchor="middle" font-family="Rajdhani, sans-serif" font-size="19" font-weight="700" fill="#00d4ff" filter="url(#g)">BB</text>
     </svg>
     <div class="nav-logo-name"><em>Byte</em>Bank</div>
-  </div>
+  </a>
   <div class="nav-right">
     <span class="nav-id">ACC #{{ "%04d"|format(user.id) }}</span>
     <a href="/purchases" class="nav-link">Compras</a>

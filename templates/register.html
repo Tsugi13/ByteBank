@@ -65,11 +65,12 @@
     }
 
     /* Logo */
-    .logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 38px; }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 38px; text-decoration: none; transition: opacity 0.2s; }
+    .logo-wrap:hover { opacity: 0.82; }
     .logo-svg  { width: 46px; height: 46px; flex-shrink: 0; }
     .logo-name {
       font-family: 'Rajdhani', sans-serif; font-size: 26px; font-weight: 700;
-      letter-spacing: 0.05em; text-transform: uppercase; color: var(--text);
+      letter-spacing: 0.05em; text-transform: uppercase; color: #ffffff;
     }
     .logo-name em { color: var(--cyan); font-style: normal; }
     .logo-sub  { font-family: 'Share Tech Mono', monospace; font-size: 9px; letter-spacing: 0.22em; color: var(--muted); margin-top: 3px; text-transform: uppercase; }
@@ -128,7 +129,7 @@
     <span class="c tl"></span><span class="c tr"></span>
     <span class="c br"></span><span class="c bl"></span>
 
-    <div class="logo-wrap">
+    <a href="/home" class="logo-wrap">
       <svg class="logo-svg" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="g"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>

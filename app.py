@@ -4,7 +4,7 @@ from brasil_geo import get_states, get_cities, get_coords
 import func as fn
 
 app = Flask(__name__)
-app.secret_key = 'senha_super_secreta'
+app.secret_key = 'senha_super_secreta'  
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -13,7 +13,7 @@ app.secret_key = 'senha_super_secreta'
 
 @app.route('/')
 def index():
-    return redirect(url_for('dashboard') if 'user' in session else url_for('login'))
+    return redirect(url_for('home') if 'user' in session else url_for('login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -24,7 +24,7 @@ def login():
 
         if fn.get_user_by_credentials(name, password):
             session['user'] = name
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('home'))
         flash('Nome ou senha incorretos.', 'error')
 
     return render_template('login.html')
@@ -57,11 +57,11 @@ def logout():
 # DASHBOARD
 # ─────────────────────────────────────────────────────────────────────────────
 
-@app.route('/dashboard')
-def dashboard():
+@app.route('/home')
+def home():
     if 'user' not in session:
         return redirect(url_for('login'))
-    return render_template('dashboard.html', user=fn.get_user(session['user']))
+    return render_template('home.html', user=fn.get_user(session['user']))
 
 
 @app.route('/withdraw', methods=['POST'])
